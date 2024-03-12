@@ -1,0 +1,28 @@
+TRUNCATE TABLE weather_data;
+CREATE TABLE IF NOT EXISTS  weather_data (
+    id INT,
+    location_name VARCHAR(255),
+    location_region VARCHAR(255),
+    location_country VARCHAR(255),
+    location_lat FLOAT,
+    location_lon FLOAT,
+    location_localtime TIMESTAMP,
+    current_last_updated TIMESTAMP,
+    current_temp_c FLOAT,
+    current_is_day BOOL,
+    current_condition_text VARCHAR(255),
+    current_condition_code INT,
+    current_wind_kph FLOAT,
+    current_wind_degree INT,
+    current_wind_dir VARCHAR(255),
+    current_pressure_mb FLOAT,
+    current_precip_mm FLOAT,
+    current_humidity INT,
+    current_cloud INT,
+    current_feelslike_c FLOAT,
+    current_vis_km FLOAT,
+    current_uv FLOAT,
+    current_gust_kph FLOAT,
+    load_datetime TIMESTAMP,
+    primary key(location_name,current_last_updated)
+) DISTSTYLE KEY DISTKEY(location_name) SORTKEY(location_name);
