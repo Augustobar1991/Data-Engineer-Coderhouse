@@ -12,6 +12,7 @@ Este proyecto utiliza las siguientes tecnologías:
 
 - [Python](https://www.python.org/): Lenguaje de programación utilizado para implementar las diferentes funcionalidades del proyecto.
 - [Amazon Redshift](https://aws.amazon.com/redshift/): Servicio de almacenamiento y análisis de datos en la nube utilizado para almacenar y consultar el clima alrededor del mundo.
+- [Airflow](https://airflow.apache.org/): Plataforma de orquestación de flujos de trabajo utilizada para programar, monitorear y administrar tareas de manera automatizada en el proyecto.
 
 ## Bibliotecas utilizadas
 

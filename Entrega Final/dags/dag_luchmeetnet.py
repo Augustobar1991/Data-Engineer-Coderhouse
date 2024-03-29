@@ -7,7 +7,7 @@ from airflow.operators.python_operator import PythonOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from functools import partial
 
-from scripts.main import load_weather_data,enviar
+from scripts.main import load_weather_data,enviar,simple
 
 default_args = {
     "retries": 3,
@@ -48,7 +48,8 @@ with DAG(
 
     report_email = PythonOperator(
         task_id='sending_email',
-        python_callable=partial(enviar, password_gmail=Variable.get('GMAIL_SECRET'))
+        python_callable=simple,
+        on_success_callback=partial(enviar, password_gmail=Variable.get('GMAIL_SECRET'))
     )
 
     dummy_end_task = DummyOperator(

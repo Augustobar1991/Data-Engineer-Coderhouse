@@ -191,4 +191,7 @@ def enviar(context,password_gmail):
         print('Failure')
         
         # Cierra la conexión SMTP
-        server.quit()    
+        server.quit()  
+
+def simple():
+    print("Working")
